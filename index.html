@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip game</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="hud">
+        <div class="game-name">FLIP GAME</div>
+
+        <div class="options">
+          <div class="button" data-mode="LOW" id="btn">
+            <div id="circle"></div>
+            <a>LOW</a>
+          </div>
+          <div class="button" data-mode="MEDIUM" id="btn">
+            <div id="circle"></div>
+            <a>HARD</a>
+          </div>
+        </div>
+      </div>
+      <div class="current-scores">
+        <h5>Last Game Score</h5>
+        <div>
+          <h5>Score: <span class="high-score"></span></h5>
+        </div>
+        <div>
+          <h5>Time: <span class="timer-score"></span>s</h5>
+        </div>
+        <div>
+          <h5>Moves: <span class="least-moves"></span></h5>
+        </div>
+      </div>
+      <div class="game-heading">
+        <h1 style="color: black; text-align: center;">
+          Flip - Pokemon Variant
+        </h1>
+      </div>
+
+      <div class="metrics">
+        <div class="score-container">
+          <h1>Score: <span class="score"></span></h1>
+        </div>
+        <div class="timer-container">
+          <h1>Time: <span class="timer"></span>s</h1>
+        </div>
+        <div class="moves-container">
+          <h1>Moves: <span class="moves"></span></h1>
+        </div>
+      </div>
+      <div class="game-container"></div>
+    </div>
+    <script src="./script.js"></script>
+    <script src="./data.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif, "Arial";
+  height: 100%;
+  margin: 0;
+}
+
+.hud {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.current-scores {
+  position: absolute;
+  top: 0;
+
+  right: 5rem;
+}
+.container {
+  z-index: 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  color: white;
+  justify-content: center;
+
+  flex-direction: column;
+  background: #bdc3c7; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c3e50,
+    #bdc3c7
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c3e50,
+    #bdc3c7
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  align-items: center;
+}
+.metrics {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 4px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  display: block;
+  background: transparent;
+  perspective: 600px;
+}
+
+.card .card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  transform-origin: center bottom;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.front-card,
+.back-card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.front-card {
+  background-color: #234361;
+}
+
+.back-card {
+  transform: rotateY(180deg);
+}
+.back-card img {
+  width: 100px;
+  height: 100px;
+}
+.card .card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+#btn {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #bfc0c0;
+  margin: 20px 20px 20px 20px;
+  color: #bfc0c0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #bfc0c0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+#circle {
+  width: 0%;
+  height: 0%;
+  opacity: 0;
+  line-height: 40px;
+  border-radius: 50%;
+  background: #bfc0c0;
+  position: absolute;
+  transition: all 0.5s ease-Out;
+  top: 20px;
+  left: 70px;
+}
+#btn a {
+  position: relative;
+  transition: all 0.45s ease-Out;
+}
+
+#btn:hover #circle {
+  width: 200%;
+  height: 500%;
+  opacity: 1;
+  top: -70px;
+  left: -70px;
+}
+
+#btn:hover a {
+  color: #2d3142;
+}
+
+@media only screen and (max-width: 600px) {
+  .metrics h1 {
+    font-size: 1em;
+  }
+  .card {
+    width: 90px;
+    height: 90px;
+  }
+  .back-card img {
+    width: 90px;
+    height: 90px;
+  }
+  .hud {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .card {
+    width: 60px;
+    height: 60px;
+  }
+  .back-card img {
+    width: 60px;
+    height: 60px;
+  }
+}
